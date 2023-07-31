@@ -1,0 +1,76 @@
+#bg-img {
+    object-fit: cover;
+    width: 100%;
+    position: relative;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 3.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#todo-app {
+    width: 40%;
+    position: relative;
+    top: -18rem;
+}
+
+#input-todo {
+    height: 2.5rem;
+    width: 75%;
+    background-color: rgb(21, 21, 104);
+    color: white;
+    font-size: 1.75rem;
+    padding: 0 1rem;
+}
+
+#todos {
+    margin: 3rem 0 0 0;
+    width: 75%;
+    background-color: rgb(21, 21, 104);
+    color: white;
+    font-size: 1.75rem;
+    padding: 0 1rem;
+}
+
+#bottom-panel {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#operation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: white;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#clearButton {
+    cursor: pointer;
+}
