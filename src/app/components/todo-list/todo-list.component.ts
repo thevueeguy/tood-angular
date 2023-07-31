@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../types/todo';
 
 @Component({
@@ -10,6 +10,8 @@ export class TodoListComponent {
   public todos: Todo[] = [];
   public filteredTodos: Todo[] = [];
   public remainingNum: number = 0;
+
+  public status: string = "";
 
   constructor( ) { }
 
@@ -36,8 +38,31 @@ export class TodoListComponent {
     this.remainingNum = this.todos.filter(todo => !todo.completed).length;
   }
 
+  filterTodos(status: string) {
+    return this.todos.filter(todo => {
+        if(status === "Active") 
+          return !todo.completed
+        else if(status === "Completed")
+          return todo.completed
+        else
+          return true;
+    }) 
+  }
+
   onClickClear() {
     this.todos = this.todos.filter((todo => todo.completed !== true));
     this.remainingNum = this.todos.filter(todo => !todo.completed).length;
+  }
+
+  onClickAll() {
+    this.status = "";
+  }
+
+  onClickActive() {
+    this.status = "Active";
+  }
+
+  onClickComplete() {
+    this.status = "Completed";
   }
 }

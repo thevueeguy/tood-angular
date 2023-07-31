@@ -74,3 +74,7 @@
 #clearButton {
     cursor: pointer;
 }
+
+div p {
+    cursor: pointer;
+}

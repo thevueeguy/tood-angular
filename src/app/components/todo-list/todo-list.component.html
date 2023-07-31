@@ -2,19 +2,19 @@
     <img src="../../../assets/bg-desktop-dark.jpg" alt="" id="bg-img">
     <div id="todo-app">
         <p id="title">Todo</p>
-        <input type="text" id="input-todo" #input (keyup.enter)="onEnterAddTodo(input.value)">
+        <input type="text" id="input-todo" #input (keyup.enter)="onEnterAddTodo(input.value); input.value=''; ">
 
         <div id="todos">
-            <div *ngFor="let todo of todos" id="task">
+            <div *ngFor="let todo of filterTodos(status)" id="task" >
                 <div [ngClass]="todo.completed ? 'completed' : ''">{{todo.content}}</div>
                 <img src="../../../assets/icon-cross.svg" alt="" (click)="onClickTodoComplete(todo.id)" height="70%">
             </div>
             <div id="bottom-panel">
                 <p>{{ remainingNum }} Left</p>
                 <div id="operation">
-                    <p>All</p>
-                    <p>Active</p>
-                    <p>Completed</p>
+                    <p (click)="onClickAll()">All</p>
+                    <p (click)="onClickActive()">Active</p>
+                    <p (click)="onClickComplete()">Completed</p>
                 </div>
                 <p (click)="onClickClear()" id="clearButton">Clear Completed</p>
             </div>
